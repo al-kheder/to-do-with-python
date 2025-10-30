@@ -4,6 +4,7 @@ from log_csv import log
 from db_sqlite import get_db, Todo
 
 app = Flask(__name__, template_folder="")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = get_db(app)
 Todo = Todo(db)
 
